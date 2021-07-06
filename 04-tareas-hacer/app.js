@@ -2,7 +2,9 @@
 require('colors');
 
 // Importo helpers 
-const { mostrarMenu, pausa } = require('./helpers/mensajes');
+// const { mostrarMenu, pausa } = require('./helpers/mensajes');
+const { inquirerMenu, pausa } = require('./helpers/inquirer');
+
 
 console.clear();
 
@@ -12,9 +14,11 @@ const main= async()=>{
    
     let opt = ''; 
     do{
-        opt =  await mostrarMenu(); //Esperate hasta que devuelva algo 
-        console.log( {opt } );
-        if (opt !== '0' ) await pausa();
+        opt =  await inquirerMenu(); //Esperate hasta que devuelva algo 
+        console.log( { opt } );
+        
+        await pausa();
+    
     }while( opt !=='0' );
 
 }
