@@ -38,6 +38,15 @@ console.log("Nuestra base:yarg ->" , argv.base);
 "En el comando por consola-> node app --base=5 "
 ```
 
+>Para el uso de peticiones request usando API externas podemos usar las tres mas usadas 
+
+- [Request - Ya obsoleta](https://www.npmjs.com/package/request) 
+- [fetch - Usp de Callback - Usada en navegadores reemplazo del ajax](https://www.npmjs.com/package/fetch)
+- [Axios- Altamente configurable y segura](https://www.npmjs.com/package/axios) -> `npm i axios` 
+
+> Para configurar variables de entorno podemos usar el paquete dotenv 
+>[Crear Variables de entorno](https://www.npmjs.com/package/dotenv)  -> `npm i dotenv`
+
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
 
