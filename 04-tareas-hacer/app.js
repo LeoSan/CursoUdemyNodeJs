@@ -4,7 +4,7 @@ require('colors');
 // Importo helpers 
 // const { mostrarMenu, pausa } = require('./helpers/mensajes'); -> Es la manera a manita sin usar el inquirer
 const { guardarDB, leerDB } = require('./helpers/guardarArchivo');
-const { inquirerMenu, pausa, leerInput } = require('./helpers/inquirer');
+const { inquirerMenu, pausa, leerInput, listadoTareasBorrar, confirmar, mostrarListadoCheckList } = require('./helpers/inquirer');
 const Tareas = require('./models/tareas');
 
 
@@ -40,14 +40,41 @@ const main= async()=>{
             case '2':
                 //Listar tareas 
                // console.log(tareas._listado);
-                console.log(tareas.listadoArr);
+               // console.log(tareas.listadoArr);
+                tareas.listadoCompleto(tareas._listado); 
                 
             break;
             case '3':
-                //Listar tareas 
-                tareas.listadoCompleto(tareas._listado); 
+                //Listar Completadas 
+                
+                tareas.listarPendientesCompletadas(true);
                 //console.log(tareas._listado);
                 
+            break;               
+            case '4':
+                //Listar Pendientes 
+                tareas.listarPendientesCompletadas(false);
+                //console.log(tareas._listado);
+                
+            break;            
+            case '5':
+                //Mostrar listado check 
+                const ids = await mostrarListadoCheckList(tareas.listadoArr);
+                tareas.toggleCompletadas(ids);
+                
+            break;              
+            case '6':
+                //Listar Pendientes 
+                const id = await listadoTareasBorrar( tareas.listadoArr );
+                if( id != '0' ){
+                    const ok = await confirmar('¿ Esta seguro ?'); 
+                    console.log( { ok });
+                    if ( ok ){
+                        tareas.borrarTarea( id );
+                        console.log('Tarea Borrada!!'.bgBlue);
+                    }
+                    //console.log(tareas._listado);
+                }
             break;            
 
         }
