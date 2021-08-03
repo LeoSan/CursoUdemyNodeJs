@@ -16,14 +16,17 @@ Práctica de Udemy Sección como reforzamiento Node.Js y mejoramiento en JavaScr
 - Autenticación - JWT 
 
 ### Comandos Usados -> Forma de Memorizar y siempre tenerlos a la mano. 
-
-- `npm install -g nodemon`
 - `npm init` -> nos genera el package_json
-
 > Pero que es el package.json -> Es el punto inicial de cualquier proyecto de node.js, nos indica que comando podemos ejeuctar para iniciar nuestra aplicación 
-
 - `npm install colors` -> Nos permite instalar colores en consola 
 - `npm install nodemon --save-dev` 
+> Con este comando hay que tener cuidado, ya que hay que configurar el package.json de la siguiente manera ->  nodemon -e js ./app.js
+```
+  "scripts": {
+    "dev": "nodemon -e js ./app.js node app.js"
+  },
+```
+
 > Es la manera de indicarle que es una dependencia pero solo como desarrollo y para desintalar dependencias podemos ejecutar ` npm uninstall nodemon` , para actualizar `npm update` y para instalar versiones `npm install colors -@1.0.0` 
 - `npm i yargs` -> Este paquete nos permite administrar de manera eficiente la lectura por consola [Enlace Yargs](http://yargs.js.org/)
 ```javascripts
