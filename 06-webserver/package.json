@@ -1,0 +1,20 @@
+{
+  "name": "06-webserver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon -e js ./app.js node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.1",
+    "hbs": "^4.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
+  }
+}
