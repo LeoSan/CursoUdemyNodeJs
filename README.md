@@ -1,4 +1,4 @@
-# CursoUdemyNodeJs 🖥️  ** Básico Node.js ** 🖥️ 
+# CursoUdemyNodeJs 🖥️ Básico Node.js 🖥️ 
 Bienvenido a las guía para desarrolladores, de manera continua explicare los puntos mas resaltates y de las prácticas de Udemy, usare este documento como reforzamiento Node.Js y mejoramiento en JavaScript, como parte de mi entrenamiento constante y diario para seguir mejorando lógica y aditamentos sobre esta buena y divertida tecnología
 
 <p align="center"><a href="https://github.com/LeoSan/CursoUdemyNodeJs" 
@@ -45,13 +45,13 @@ console.log("Nuestra base:yarg ->" , argv.base);
 ```
 
 >Para el uso de peticiones request usando API externas podemos usar las tres mas usadas 
-
 - [Request - Ya obsoleta](https://www.npmjs.com/package/request) 
 - [fetch - Usp de Callback - Usada en navegadores reemplazo del ajax](https://www.npmjs.com/package/fetch)
 - [Axios- Altamente configurable y segura](https://www.npmjs.com/package/axios) -> `npm i axios` 
 
-> Para configurar variables de entorno podemos usar el paquete dotenv 
->[Crear Variables de entorno](https://www.npmjs.com/package/dotenv)  -> `npm i dotenv`
+- `npm i dotenv` -> Dotenv  nos permite crear variables de entorno  => [Crear Variables de entorno](https://www.npmjs.com/package/dotenv)  -> 
+- `npm install hbs` -> Esto permite lograr dinamismo en tus paginas estaticas es como la parte de angular {Valor} 
+- 
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
