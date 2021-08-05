@@ -47,7 +47,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 >Para el uso de peticiones request usando API externas podemos usar las tres mas usadas 
 - [Request - Ya obsoleta](https://www.npmjs.com/package/request) 
 - [fetch - Usp de Callback - Usada en navegadores reemplazo del ajax](https://www.npmjs.com/package/fetch)
-- [Axios- Altamente configurable y segura](https://www.npmjs.com/package/axios) -> `npm i axios` 
+- `npm i axios`  => [Axios- Altamente configurable y segura](https://www.npmjs.com/package/axios) -> Este es el que mas se usa 
 
 - `npm i dotenv` -> Dotenv  nos permite crear variables de entorno  => [Crear Variables de entorno](https://www.npmjs.com/package/dotenv)  -> 
 - `npm install hbs` -> Esto permite lograr dinamismo en tus paginas estaticas es como la parte de angular {Valor}-> [pillarjs](https://github.com/pillarjs/hbs) 
