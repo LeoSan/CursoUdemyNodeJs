@@ -50,7 +50,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - [Axios- Altamente configurable y segura](https://www.npmjs.com/package/axios) -> `npm i axios` 
 
 - `npm i dotenv` -> Dotenv  nos permite crear variables de entorno  => [Crear Variables de entorno](https://www.npmjs.com/package/dotenv)  -> 
-- `npm install hbs` -> Esto permite lograr dinamismo en tus paginas estaticas es como la parte de angular {Valor} 
+- `npm install hbs` -> Esto permite lograr dinamismo en tus paginas estaticas es como la parte de angular {Valor}-> [pillarjs](https://github.com/pillarjs/hbs) 
 - 
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
