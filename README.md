@@ -51,7 +51,8 @@ console.log("Nuestra base:yarg ->" , argv.base);
 
 - `npm i dotenv` -> Dotenv  nos permite crear variables de entorno  => [Crear Variables de entorno](https://www.npmjs.com/package/dotenv)  -> 
 - `npm install hbs` -> Esto permite lograr dinamismo en tus paginas estaticas es como la parte de angular {Valor}-> [pillarjs](https://github.com/pillarjs/hbs) 
-- 
+- `npm i cors` -> Permite evitar el original cross server es un midlewares y como lo sabes (Todo aquello que use app.use es un midle)  -> https://www.npmjs.com/package/cors
+
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
