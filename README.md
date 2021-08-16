@@ -66,7 +66,13 @@ console.log("Nuestra base:yarg ->" , argv.base);
 
 ![Tips Heroku](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/TipsHeroku.png)
 
+### Pasos Para configurar 
+- Paso 1: Debemos crear una cuenta ya la tienes 
+- Paso 2: Debemos crear un usuario para la base de datos segir la siguiente imagen 
+- Paso 3: Debemos generar script para conexión que pondremos en `.env`
 
+
+mongodb+srv://AppCafe:HwbZQr2Q0YjVWLaS@cluster0.nhlca.mongodb.net/AppCafe
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
 
