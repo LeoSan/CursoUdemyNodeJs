@@ -60,6 +60,11 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - ![Releases](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/release01.png)
 - Paso 4: Debemos dar clic en el tag y luego clic en editar (Edit tag) y luego clic en publics releases, claro previamente llenar los campos descriptivos 
 
+### Tips para Heroku
+ >PD 1: Cuando tengas tu desarrollo listo podemos exportar en heroku, yo lo hago por la interfaz de git para monstarlo en heroku, pero antes debes hacer ajustes en tu package.json 
+ >en la sección de script hay que poner `start:"node app"` donde app es el nombre de tu archivo principal. 
+
+![Tips Heroku](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/TipsHeroku.png)
 
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
