@@ -53,6 +53,14 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - `npm install hbs` -> Esto permite lograr dinamismo en tus paginas estaticas es como la parte de angular {Valor}-> [pillarjs](https://github.com/pillarjs/hbs) 
 - `npm i cors` -> Permite evitar el original cross server es un midlewares y como lo sabes (Todo aquello que use app.use es un midle)  -> https://www.npmjs.com/package/cors
 
+### Como generar un realease 
+- Paso 1:Luego de generar un código estable podemos ejecutar el comando `git tag -a-Nombredetutag-  -m"Comentario de tu tags"`
+- Paso 2: Luego de generar tu tag hay que subirlo a tu git con este comando `git push --tags`
+- Paso 3: Ubicamos la interfaz de  github y damos clic `Realeases` 
+- ![Releases](/release01.png)
+- Paso 4: Debemos dar clic en el tag y luego clic en editar (Edit tag) y luego clic en publics releases, claro previamente llenar los campos descriptivos 
+
+
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
