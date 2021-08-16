@@ -3,10 +3,14 @@ const { response } = require('express');
 
 const getUser = (req, res = response  )=>{
 
+    //Forma de mandar query -> Es decir multiples parametros opcionales 
+    const query = req.query 
+
     const datos = {
         msg:"Ejemplo GET - Controlador",
         name:"Leonard",
         lastname:"cuenca",
+        query,
         success:true
     
     }
@@ -34,10 +38,15 @@ const postUser = (req, res = response  )=>{
 
 const putUser = (req, res = response  )=>{
 
+
+    //Forma de enviar parametros por get 
+    const  { id } = req.params; 
+
     const datos = {
         msg:"Ejemplo Put - Controlador",
         name:"Leonard",
         lastname:"cuenca",
+        id:id,
         success:true
     
     }

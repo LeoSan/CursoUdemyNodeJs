@@ -14,7 +14,9 @@ router.get('/consulta', getUser );
 
 router.post('/peticion',  postUser  );    
 
-router.put('/edit', putUser );        
+
+//Forma de enviar parametros por get 
+router.put('/edit/:id', putUser );        
 
 router.delete('/delete', deleteUser);
 
