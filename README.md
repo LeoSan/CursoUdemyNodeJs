@@ -74,8 +74,8 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - ![Paso 2.2](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/MongoDB003.png)
 - Paso 3: Debemos generar script para conexión que pondremos en `.env`
 - ![Paso 3](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/MongoDB004.png)
+- Formato de conexion en tu archivo .env  `mongodb+srv://NombreUsuario:Contraseña@cluster0.nhlca.mongodb.net/NombreBD`
 
-mongodb+srv://AppCafe:HwbZQr2Q0YjVWLaS@cluster0.nhlca.mongodb.net/AppCafe
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
 
