@@ -69,8 +69,11 @@ console.log("Nuestra base:yarg ->" , argv.base);
 ### Pasos Para configurar 
 - Paso 1: Debemos crear una cuenta ya la tienes 
 - Paso 2: Debemos crear un usuario para la base de datos segir la siguiente imagen 
+- ![Paso 2](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/MongoDB001.png)
+- ![Paso 2.1](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/MongoDB002.png)
+- ![Paso 2.2](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/MongoDB003.png)
 - Paso 3: Debemos generar script para conexión que pondremos en `.env`
-
+- ![Paso 3](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/MongoDB004.png)
 
 mongodb+srv://AppCafe:HwbZQr2Q0YjVWLaS@cluster0.nhlca.mongodb.net/AppCafe
 ### Seción de Reflexión, Detalles para ir mejorando. 
