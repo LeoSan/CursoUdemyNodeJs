@@ -52,6 +52,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - `npm i dotenv` -> Dotenv  nos permite crear variables de entorno  => [Crear Variables de entorno](https://www.npmjs.com/package/dotenv)  -> 
 - `npm install hbs` -> Esto permite lograr dinamismo en tus paginas estaticas es como la parte de angular {Valor}-> [pillarjs](https://github.com/pillarjs/hbs) 
 - `npm i cors` -> Permite evitar el original cross server es un midlewares y como lo sabes (Todo aquello que use app.use es un midle)  -> https://www.npmjs.com/package/cors
+- `npm i mongoose` -> Permite descagar el paquete para porder usar mongoose, es nuestro ORM para manejar BD Mongo en nodejs 
 
 ### Como generar un realease 
 - Paso 1:Luego de generar un código estable podemos ejecutar el comando `git tag -a-Nombredetutag-  -m"Comentario de tu tags"`
@@ -66,7 +67,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 
 ![Tips Heroku](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/TipsHeroku.png)
 
-### Pasos Para configurar 
+### Pasos Para configurar BD
 - Paso 1: Debemos crear una cuenta ya la tienes 
 - Paso 2: Debemos crear un usuario para la base de datos segir la siguiente imagen 
 - ![Paso 2](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/MongoDB001.png)
@@ -75,6 +76,17 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - Paso 3: Debemos generar script para conexión que pondremos en `.env`
 - ![Paso 3](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/07-restserver/public/MongoDB004.png)
 - Formato de conexion en tu archivo .env  `mongodb+srv://NombreUsuario:Contraseña@cluster0.nhlca.mongodb.net/NombreBD`
+- Podemos crear un arhcivo bd.js y usar este código para conectarnos 
+```javascript  
+
+       await mongoose.connect(process.env.DB_MONGO, {
+           useNewUrlParser:true,
+           useUnifiedTopology:true,
+           useFindAndModify:false,
+           useCreateIndex : true , // Para quitar el error DeprecationWarning: collection.ensureInd 
+       } );
+
+```
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
