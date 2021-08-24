@@ -2,6 +2,9 @@
 const express = require('express');
 const cors = require('cors')
 
+const db = require('../config/db');
+
+
  
 
 
@@ -12,16 +15,16 @@ class server{
         this.port     = process.env.PORT;
         this.usuPath  = '/api/users';
 
-        //midlewares< 
+        this.conectarDB();
+
+        //midlewares
         this.app.use( cors() ); // Esto permite un grado de seguridad
-        
+
         this.midlewares();
         
         
         //rutas de aplicación
         this.routes();
-
-        
 
     }
 
@@ -44,6 +47,11 @@ class server{
         
         //Habilitar leer los valores de un body del raw -> Esta manera es de enviar json a los apis 
         this.app.use(express.json());
+
+    }    
+    
+    async conectarDB(){
+       await db.dbConetion()
 
     }
 
