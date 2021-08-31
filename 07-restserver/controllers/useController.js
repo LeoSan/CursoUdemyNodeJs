@@ -1,6 +1,6 @@
 const { response } = require('express');
-const bcryptjs  = require('bcryptjs');
- 
+const bcryptjs = require('bcryptjs');
+
 
 const Usuario = require('../models/usuario');
 
@@ -8,53 +8,67 @@ const Usuario = require('../models/usuario');
 const { validaCampos } = require('../middlewares/validar-campos');
 
 //Controlador - Crea Usuario 
-const createUser = async(req, res = response  )=>{
+const createUser = async (req, res = response) => {
 
     //Declaración de Var
-    const { nombre, correo, password, rol } = req.body 
- 
+    const { nombre, correo, password, rol } = req.body
+
     //Instancio objeto Modelo Usuario -> lo preparo con las variables del post 
-    const usuario = new Usuario({nombre, correo, password, rol});
+    const usuario = new Usuario({ nombre, correo, password, rol });
 
     //Genero una nueva clave tipo  has 
     const salt = bcryptjs.genSaltSync(10);
-    usuario.password = bcryptjs.hashSync( password, salt);
+    usuario.password = bcryptjs.hashSync(password, salt);
 
     try {
 
         //Guardado del usuario 
-        usuario.save(); 
+        usuario.save();
 
         const datos = {
-            msg:"Usuario Creado",
+            msg: "Usuario Creado",
             usuario,
-            success:true
+            success: true
         }
-       return res.status(200).json(datos);
-                
+        return res.status(200).json(datos);
+
     } catch (error) {
-        return res.status(403).json({msg:"", success:false, "error":error});
+        return res.status(403).json({ msg: "", success: false, "error": error });
     }
 
 }
 
 
-const getUser = async(req, res = response  )=>{
+const getUser = async (req, res = response) => {
 
     //Forma de mandar query -> Es decir multiples parametros opcionales 
-    const { limite = 3, desde = 0 } = req.query 
+    const { limite = 3, desde = 0 } = req.query
 
-    const usuarios = await Usuario.find()
-            .skip(  Number(desde) )    
-            .limit( Number(limite) ) ;
+    //Forma para hacer un paginador y filtrar los valores 
+    /*  const usuarios = await Usuario.find({estado:true})  // Forma individual 
+              .skip(  Number(desde) )    
+              .limit( Number(limite) ) ;
+  */
+    //   const total = await Usuario.countDocuments({estado:true}); // Forma indivisual 
+
+
+    //Forma unificada
+
+    const [total, usuarios] = await Promise.all([ // Esto es mucho mas rapido
+        Usuario.countDocuments({ estado: true }),//Promesa 1 
+        Usuario.find({ estado: true }) //Promesa 2 
+            .skip(Number(desde))
+            .limit(Number(limite))
+    ]);
 
     const datos = {
-        msg:"Ejemplo GET - Controlador",
+        msg: "Ejemplo GET - Controlador",
         usuarios,
-        success:true,
+        success: true,
         limite,
-        desde
-    
+        desde,
+        total
+
     }
 
     res.status(200).json(datos);
@@ -62,60 +76,66 @@ const getUser = async(req, res = response  )=>{
 }
 
 
-const postUser = (req, res = response  )=>{
+const postUser = (req, res = response) => {
 
-    const {nombre, edad} = req.body;
+    const { nombre, edad } = req.body;
 
     const datos = {
-        msg:"Ejemplo Post - Controlador",
+        msg: "Ejemplo Post - Controlador",
         nombre,
         edad,
-        success:true
-    
+        success: true
+
     }
 
     res.status(403).json(datos);
 
 }
 
-const putUser = async(req, res = response  )=>{
+const putUser = async (req, res = response) => {
 
 
     //Forma de enviar parametros por get 
-    const  { id } = req.params; 
-    const  { _id, password, google, correo, ...resto  } = req.body; // Nota Es la menra de extraer solo los datos que necesitamos ...resto es lo que usaremos lo demas le decimos que no vamos a usar 
+    const { id } = req.params;
+    const { _id, password, google, correo, ...resto } = req.body; // Nota Es la menra de extraer solo los datos que necesitamos ...resto es lo que usaremos lo demas le decimos que no vamos a usar 
 
     // Todo valida BD 
-    if (password){
+    if (password) {
         //Genero una nueva clave tipo  has 
         const salt = bcryptjs.genSaltSync(10);
-        resto.password = bcryptjs.hashSync( password, salt);
+        resto.password = bcryptjs.hashSync(password, salt);
     }
-    const usuario  = await Usuario.findByIdAndUpdate(id, resto);
+    const usuario = await Usuario.findByIdAndUpdate(id, resto);
 
     //
 
     const datos = {
-        msg:"Ejemplo Put - Controlador",
-        name:"Leonard",
-        lastname:"cuenca",
-        id:id,
-        success:true
-    
+        msg: "Ejemplo Put - Controlador",
+        name: "Leonard",
+        lastname: "cuenca",
+        id: id,
+        success: true
+
     }
 
     res.status(403).json(datos);
 
 }
 
-const deleteUser = (req, res = response  )=>{
+const deleteUser = async(req, res = response) => {
+
+    const { id } = req.params;
+    // const {id_param} = req.body;
+
+    const usuario = await Usuario.findByIdAndUpdate(id, {estado:false } );
 
     const datos = {
-        msg:"Ejemplo Delete - Controlador",
-        name:"Leonard",
-        lastname:"cuenca",
-        success:true
-    
+        msg: "Ejemplo Delete - Controlador",
+        name: "Leonard",
+        lastname: "cuenca",
+        id,
+        success: true
+
     }
 
     res.status(403).json(datos);

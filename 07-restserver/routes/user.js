@@ -50,6 +50,10 @@ router.put('/edit/:id', [
     , validaCampos
 ], putUser );        
 
-router.delete('/delete', deleteUser);
+router.delete('/delete/:id', [
+    check('id', 'No es un Id valido').isMongoId()
+  , check('id').custom(isExisteUserId)
+  , validaCampos
+], deleteUser);
 
 module.exports = router; 
