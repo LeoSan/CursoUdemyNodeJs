@@ -98,7 +98,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - `npm i bcryptjs` 
 - `npm i express-validator` 
 - `npm i axios` 
-
+- `npm i jsonwebtoken`
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
