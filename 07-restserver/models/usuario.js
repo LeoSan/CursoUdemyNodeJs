@@ -49,6 +49,7 @@ const usuariosSchema = new Schema({
 //Meotdo para sobreescribir 
 usuariosSchema.methods.toJSON = function(){ //Tiene que ser una funcion normal para poder usar el this lo que no ()=> 
   const {__v, _id, password, ...user } = this.toObject();
+  user.uid = _id
   return user;
 }
 

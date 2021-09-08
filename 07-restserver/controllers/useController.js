@@ -126,6 +126,8 @@ const deleteUser = async(req, res = response) => {
 
     const { id } = req.params;
     // const {id_param} = req.body;
+    const uid = req.uid; 
+    const usuAutenticado = req.usuAutenticado; 
 
     const usuario = await Usuario.findByIdAndUpdate(id, {estado:false } );
 
@@ -133,7 +135,8 @@ const deleteUser = async(req, res = response) => {
         msg: "Ejemplo Delete - Controlador",
         name: "Leonard",
         lastname: "cuenca",
-        id,
+        usuario,
+        usuAutenticado,
         success: true
 
     }
