@@ -105,7 +105,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 ## Pasos para generar un Login usando Google en tu back y front 
 
 - Paso 1: Debemos ingresar a esta  web y leer la docuentación: https://developers.google.com/identity/sign-in/web/sign-in
-- Paso 2: Seguimos estos pasos generales para poder desarrollar -> ![Parte 1](https://github.com/LeoSan/CursoUdemyNodeJs/tree/main/Infografias/Google_002.png)
+- Paso 2: Seguimos estos pasos generales para poder desarrollar -> ![Parte 1](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_002.png)
 - Paso 3: Creamos una credencial ID Cliente Oauth ->   ![Parte 2](https://github.com/LeoSan/CursoUdemyNodeJs/tree/main/Infografias/Google_001.png)
 - Nos mostrara una interfaz donde podemos llenar los campos, seleccionamos aplicación web, colocamos nombre y anexamos las rutas donde lo vamos a usar en este caso localhost y si tenemos desplegados en heroku -> ![Parte 3](https://github.com/LeoSan/CursoUdemyNodeJs/tree/main/Infografias/Google_003.png)
 - Paso 4: Nos genera los Token o Cliente ID ![Parte 4](https://github.com/LeoSan/CursoUdemyNodeJs/tree/main/Infografias/Google_004.png)
