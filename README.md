@@ -113,13 +113,13 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - Paso 6: Creamos nuestra interfaz de esta manera -> ![Parte 6](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_006.png) 
 - Paso 7: Creamos una ruta desde el Backend para poder escuchar el front, podemos creala desde nuestro router auth.js con su controlador   -> ![Parte 7](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_007.png) 
 - Paso 8: Modificamos nuestro front solicitando una petición a nuestra ruta creada, Podemos anexar este fragmento de condigo en el front ->   ![Parte 8](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_008.png) 
-- Paso 9: Continuamos paso 8 anexando nuestros fetch donde se enviara el token de google generado, con el plan de nuestro back validar dicho token ->[Parte 9](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_009.png) 
+- Paso 9: Continuamos paso 8 anexando nuestros fetch donde se enviara el token de google generado, con el plan de nuestro back validar dicho token -> ![Parte 9](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_009.png) 
 - Paso 10: Validamos el token de googl, debemos instalar un paquete `npm install google-auth-library --save`
-- Paso 11: Creamos un helpers para anexar el codigo de validación -> [Parte 10](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_010.png) 
-- PASO 12: Inplementamos nuestro helper en nuestro controlador -> [Parte 11](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_011.png) 
--[Parte 12](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_012.png)
-- Paso 13: En el mismo controlador podemos crear el usuario y redireccionar donde queremos con los valores que nos genera el token de google. Como ejemplo podemos usar este codigo -> [Parte 13](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_013.png)
--> Generamos token [Parte 14](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_014.png)
+- Paso 11: Creamos un helpers para anexar el codigo de validación -> ![Parte 10](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_010.png) 
+- PASO 12: Inplementamos nuestro helper en nuestro controlador -> ![Parte 11](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_011.png) 
+ - ![Parte 12](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_012.png)
+- Paso 13: En el mismo controlador podemos crear el usuario y redireccionar donde queremos con los valores que nos genera el token de google. Como ejemplo podemos usar este codigo -> ![Parte 13](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_013.png)
+-> Generamos token ![Parte 14](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_014.png)
 
 ## Comandos Heroku 
 
