@@ -121,7 +121,28 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - Paso 13: En el mismo controlador podemos crear el usuario y redireccionar donde queremos con los valores que nos genera el token de google. Como ejemplo podemos usar este codigo -> [Parte 13](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_013.png)
 -> Generamos token [Parte 14](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Google_014.png)
 
+## Comandos Heroku 
 
+| Iniciar
+- Heroku Login 
+
+|Crear proyecto
+- HeroKu create
+
+|Enlacar el repositorio
+- Heroku remote
+
+|enviar
+- git push heroku master / main 
+
+| Variables de entorno
+- Heroku config:Add " "
+
+| Revisar carpetas de heroku
+- heroku ps:exec
+
+| Revisar que profiel exista
+- pwd && ls -la && cat Procfile
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Pendiente
