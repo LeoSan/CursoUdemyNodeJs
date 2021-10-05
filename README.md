@@ -53,6 +53,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - `npm install hbs` -> Esto permite lograr dinamismo en tus paginas estaticas es como la parte de angular {Valor}-> [pillarjs](https://github.com/pillarjs/hbs) 
 - `npm i cors` -> Permite evitar el original cross server es un midlewares y como lo sabes (Todo aquello que use app.use es un midle)  -> https://www.npmjs.com/package/cors
 - `npm i mongoose` -> Permite descagar el paquete para porder usar mongoose, es nuestro ORM para manejar BD Mongo en nodejs 
+- `npm i express-fileupload` -> Es el modulo que permite subir archivos
 
 
 
@@ -99,6 +100,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - `npm i express-validator` 
 - `npm i axios` 
 - `npm i jsonwebtoken`
+- `npm i express-fileupload`
 
 
 
