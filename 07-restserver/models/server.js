@@ -1,8 +1,12 @@
-
+//Importo librerrias 
 const express = require('express');
 const cors = require('cors')
 
+//Importo Base Datos
 const db = require('../config/db');
+
+//Importo Carga de Archivos d
+const fileUpload = require('express-fileupload');
 
 
  class server{
@@ -10,12 +14,13 @@ const db = require('../config/db');
     constructor(){
         this.app      = express();
         this.port     = process.env.PORT;
-        this.Paths  = {
+        this.paths  = {
             auth:'/api/auth',
             usuario:'/auth/users',
             categoria:'/api/categoria',
 			buscar:     '/api/buscar',
             productos:  '/api/productos',
+            upload:     '/api/uploads',
 
         };
         this.usuPath  = '/api/users';
@@ -36,10 +41,11 @@ const db = require('../config/db');
 
         this.app.use( this.authPath , require('../routes/auth') );    
         this.app.use( this.usuPath , require('../routes/user') );
-        this.app.use( this.Paths.categoria , require('../routes/categoria') );
+        this.app.use( this.paths.categoria , require('../routes/categoria') );
 		
 		this.app.use( this.paths.buscar, require('../routes/buscar'));
-		this.app.use( this.paths.productos, require('../routes/productos'));
+		//this.app.use( this.paths.productos, require('../routes/productos'));
+		this.app.use( this.paths.upload, require('../routes/upload'));
             
         
     }
@@ -60,6 +66,12 @@ const db = require('../config/db');
         
         //Habilitar leer los valores de un body del raw -> Esta manera es de enviar json a los apis 
         this.app.use(express.json());
+
+        //Permite manejar el fileUpload - Carga de Archivos 
+        this.app.use(fileUpload({
+            useTempFiles : true,
+            tempFileDir : '/tmp/'
+        }));
 
     }    
     
