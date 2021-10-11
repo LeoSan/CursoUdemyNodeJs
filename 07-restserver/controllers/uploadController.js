@@ -1,14 +1,10 @@
 //Requiero librerias de Nodejs 
-const path = require('path');
 const { response } = require('express');
-const bcryptjs = require('bcryptjs');
 
-//Importo uuid para generar archivos unicos
-const {v4:uuidv4 } = require('uuid');
+const { valSubirArchivo } = require('../helpers/subir-archivos');
 
 
-//Requiero Model 
-const Usuario = require('../models/usuario');
+
 
 //Controlador - uploader 
 const uploader = async (req, res = response) => {
@@ -22,37 +18,19 @@ const uploader = async (req, res = response) => {
     //Valido si viene el campo tipo file del formulario llamado archivo 
     if (!req.files.archivo) {
         return res.status(403).json({ msg: "No hay Archivo", success: false });
-    }   
-    
-    //Iniciamos proceso de   
-     //console.log('req.files >>>', req.files); // eslint-disable-line
-  
-    //Aplico destruction para extraer la info 
-    const { archivo } = req.files;
-
-    //Extraigo extension 
-    const nombreCortado = archivo.name.split('.');
-    const extension = nombreCortado[nombreCortado.length -1];
-    const extensionVal = ['png', 'jpg', 'gif', 'jpeg']
-
-    if (extensionVal.includes(extension)){
-        return res.status(400).json({ msg: `La extension no es valida`, success: false });
     }
-  
-    //Nombre temporal del archivo de
-    const nombTemp = uuidv4() + '.' + extension; 
 
-    //Lugar donde se almacenaran los archivos
-    const  uploadPath = path.join( __dirname,  '../uploads/', nombTemp);
-  
-    archivo.mv(uploadPath, (err)=> {
-        if (err) {
-            console.log("err", err);
-          return res.status(500).json({ msg: "No hay Archivo", success: false, error: err});
-        }
+    //Como revuelve una promesa: Recuerda que puedes usar su propio 
+    //catch siempre y cuando uses then enviando una función ()=> 
+    //De esta manera 
+    //valSubirArchivo()= Permite subir archivos solo debes enviar los parametros por defecto ono 
+    const result = await valSubirArchivo(req.files, undefined, 'images' ).then( (result)=>{
+        res.status(200).json({msg: result, success:true}); 
+    }).catch((err)=>{
+        res.status(401).json({msg: err, success:false}); 
+    }); 
+
     
-        res.status(500).json({ msg: "Archivo se subio Exitosamente", success: true, archivo});
-      });
 
 }   
 

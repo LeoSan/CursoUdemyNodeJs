@@ -70,7 +70,8 @@ const fileUpload = require('express-fileupload');
         //Permite manejar el fileUpload - Carga de Archivos 
         this.app.use(fileUpload({
             useTempFiles : true,
-            tempFileDir : '/tmp/'
+            tempFileDir : '/tmp/', 
+            createParentPath:true, //Esto permite crear directorios si no encuentra la ruta 
         }));
 
     }    
