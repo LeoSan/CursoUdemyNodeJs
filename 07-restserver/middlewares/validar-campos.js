@@ -1,7 +1,6 @@
 
 //importo librerias 
 const {response} = require('express');
-
 const {validationResult}  = require('express-validator');
 
 
@@ -15,7 +14,6 @@ const validaCampos = (req, res, next )=>{
     next();
 
 }
-
 
 const esAdminRole = (req, res = response, next )=>{
 
@@ -32,6 +30,7 @@ const esAdminRole = (req, res = response, next )=>{
     next();
 
 }
+
 const tieneRole = ( ...roles  )=>{
     // (...) operador rest == resto une los argumentos -> Lo transforma en un arreglo 
     return (req, res = response, next)=>{
@@ -48,8 +47,25 @@ const tieneRole = ( ...roles  )=>{
 
 }
 
+
+const validaCampoArchivo = (req, res = response, next )=>{
+
+    //Valido si cumple con lo basico de archivos 
+    if (!req.files || Object.keys(req.files).length === 0) {
+        return res.status(403).json({ msg: "No hay Archivo tipo file", success: false });
+    }
+
+    //Valido si viene el campo tipo file del formulario llamado archivo 
+    if (!req.files.archivo) {
+        return res.status(403).json({ msg: "No hay Archivo", success: false });
+    }
+    next();
+
+}
+
 module.exports ={
     validaCampos,
     esAdminRole,
-    tieneRole
+    tieneRole,
+    validaCampoArchivo
 }

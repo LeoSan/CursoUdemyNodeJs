@@ -138,7 +138,10 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - git push heroku master / main 
 
 | Variables de entorno
+- heroku config
 - Heroku config:Add " "
+- Heroku config:set TuVariableEntorno ="AquiTuPalabrasecreta"
+
 
 | Revisar carpetas de heroku
 - heroku ps:exec
@@ -146,8 +149,53 @@ console.log("Nuestra base:yarg ->" , argv.base);
 | Revisar que profiel exista
 - pwd && ls -la && cat Procfile
 
+
+
+## Pasos para Usar Cloudinary  Clase (197)
+- Primero Crear una cuenta -> [Cuenta](https://cloudinary.com/)
+- Luego instalar https://www.npmjs.com/package/cloudinary ->`npm i cloudinary` 
+- Paso 2: Debes Ubicar los Datos de tu Cuenta 
+![Paso 2](../infografias/Paso_1_RusDatosCloudinary.png)
+
+- Paso 3: Debes generar tus variables de entorno
+![Paso 3](../infografias/Paso_2_TuENV.png)
+
+- Paso 4: Podemos incluirlo en nuestro backenders
+```
+const cloudinary = require('cloudinary').v2
+cloudinary.config(process.env.CLOUDUNARY_URL);
+
+```
+- Paso 5: Creamos nuestro metodo controlador ó a nuestro metodo controlador incorporamos este fragmento de codigo 
+```
+//Esto para eliminar imagen en Cloudinary
+if (imagenExiste){
+  //en caso que no tengas el nombre de la imagen de manera absoluta precedemos a picar su path
+  const nombreArr = urlimg.split('.');
+  const nombre = nombreArr[0];
+  //Metodo para elminar 
+  cloudinary.uploader.destroy(nombre);
+
+}
+
+//Esto es para subir una imagen en cloudinary
+const resp = await cloudinary.uploader.upload(req.files.archivo.tempFilePath);
+
+// resp.secure_url -> Esto es lo que nos importa ya que si se subio de manera correcta esta devuelve la ruta donde se almaceno
+
+```
+
+
+## Sección 14: Sockets 
+- Iniciamos con el temario 
+![Temario]("./Infografias/WebSockets.png")
+
+
 ### Seción de Reflexión, Detalles para ir mejorando. 
-- Pendiente
+- Estudiar como mejorar las consultas con mongoose
+
+
+
 
 ### Links Guia 
 

@@ -2,7 +2,7 @@
 const { Router } = require('express');
 const router = Router();
 const { check } = require('express-validator');
-const { validaCampos, esAdminRole,tieneRole } = require('../middlewares/validar-campos');
+const { validaCampos, esAdminRole, tieneRole } = require('../middlewares');
 const { validarJWT } = require('../middlewares/validar-jwt');
 
 //Importo mi Modelo a validar 
