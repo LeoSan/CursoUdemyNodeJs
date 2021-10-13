@@ -155,10 +155,10 @@ console.log("Nuestra base:yarg ->" , argv.base);
 - Primero Crear una cuenta -> [Cuenta](https://cloudinary.com/)
 - Luego instalar https://www.npmjs.com/package/cloudinary ->`npm i cloudinary` 
 - Paso 2: Debes Ubicar los Datos de tu Cuenta 
-![Paso 2]("https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Paso_1_RusDatosCloudinary.png")
+![Paso 2](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Paso_1_RusDatosCloudinary.png)
 
 - Paso 3: Debes generar tus variables de entorno
-![Paso 3]("https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Paso_2_TuENV.png")
+![Paso 3](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/Paso_2_TuENV.png)
 
 - Paso 4: Podemos incluirlo en nuestro backenders
 ```
@@ -188,7 +188,7 @@ const resp = await cloudinary.uploader.upload(req.files.archivo.tempFilePath);
 
 ## Sección 14: Sockets 
 - Iniciamos con el temario 
-![Temario]("https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/WebSockets.png")
+![Temario](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/WebSockets.png)
 
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
