@@ -190,6 +190,17 @@ const resp = await cloudinary.uploader.upload(req.files.archivo.tempFilePath);
 - Iniciamos con el temario 
 ![Temario](https://github.com/LeoSan/CursoUdemyNodeJs/blob/main/Infografias/WebSockets.png)
 
+> Que son los Sockets : Permite mantener una comunicación activa desde el servidor al cliente, manteniendo comunicación en tiempo real.
+
+*** Ventajas ***
+- Disparar Eventos Personalizados 
+- Comuicación tiempo real
+
+**Instalacion**
+- npm i socket.io -> https://www.npmjs.com/package/socket.io
+- Recuerda que en node.js puedes usar socket pero socket.io permite darle un plus en el manejo de socket 
+
+
 
 ### Seción de Reflexión, Detalles para ir mejorando. 
 - Estudiar como mejorar las consultas con mongoose
