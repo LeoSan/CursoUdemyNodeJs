@@ -1,0 +1,374 @@
+{
+	"info": {
+		"_postman_id": "28e7d973-9ef6-44a2-8a1e-499c06a4224f",
+		"name": "Practica - Express - Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Usuario",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Kenny\",\r\n    \"google\":true,\r\n    \"correo\":\"cuenca622@gmail.com\",\r\n    \"password\":\"LeoSeguro0186*\",\r\n    \"img\":null,\r\n    \"rol\":\"ADMIN_ROLE\",\r\n    \"estado\":true\r\n\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"correo\":\"cuenca623@gmail.com\",\r\n    \"password\":\"12345698996\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Valida y Renueva Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTI1MzAwOGNjMDQzYjIyODQ0NzhmYjUiLCJpYXQiOjE2Mzc1OTk2MTEsImV4cCI6MTYzNzYwMzIxMX0.IIV3oo7sNn5iqbV2T20uOCkG25j0H4TW0gKQq5ABIX0",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Subir archivo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "archivo",
+							"type": "file",
+							"src": "/C:/Users/cuenc/Desktop/Vacuna.png"
+						},
+						{
+							"key": "idUser",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/uploads/carga",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"uploads",
+						"carga"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mostrar Imagen Archivo",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "idUser",
+							"value": "6125401f6dd0aa2d00eee157",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/uploads/mostrar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"uploads",
+						"mostrar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Cateogira",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/categoria/create-categoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categoria",
+						"create-categoria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar Usuario",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombre\":\"Leonard\",\r\n    \"google\":true,\r\n    \"correo\":\"cuenca623@gmail.com\",\r\n    \"password\":\"12345698996\",\r\n    \"img\":null,\r\n    \"rol\":\"ADMIN_ROLE\",\r\n    \"estado\":true\r\n\r\n  \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/edit/61253008cc043b2284478fb5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"edit",
+						"61253008cc043b2284478fb5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cateogira",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/categoria/get-categoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categoria",
+						"get-categoria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consulta Usuario",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/users/consulta?limite=5&desde=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"consulta"
+					],
+					"query": [
+						{
+							"key": "limite",
+							"value": "5"
+						},
+						{
+							"key": "desde",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Consultar Cateogira ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/categoria/get-categoria/prueba",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categoria",
+						"get-categoria",
+						"prueba"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificar Categoria",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/categoria/edit-categoria/idCategoria",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categoria",
+						"edit-categoria",
+						"idCategoria"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Rest / Eliminar User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2MTI1MzAwOGNjMDQzYjIyODQ0NzhmYjUiLCJpYXQiOjE2MzEwNjQ4MDgsImV4cCI6MTYzMTA2ODQwOH0.xKfghKeuLt6j4SZhT8w4thX9QGl_mDAdEEybGfdL88o",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/users/delete/61253008cc043b2284478fb5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"users",
+						"delete",
+						"61253008cc043b2284478fb5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar  Categoria",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/categoria/delete-categoria/idEliminar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categoria",
+						"delete-categoria",
+						"idEliminar"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
