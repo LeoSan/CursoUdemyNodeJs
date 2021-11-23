@@ -93,6 +93,7 @@ console.log("Nuestra base:yarg ->" , argv.base);
 
 # Comando para SERVER -> SSR 
 - `npm i express`  
+- `npm install nodemon --save-dev`
 - `npm i cors`  
 - `npm i dotenv` 
 - `npm i mongoose` 
